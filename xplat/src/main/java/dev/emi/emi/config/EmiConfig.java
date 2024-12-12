@@ -395,6 +395,11 @@ public class EmiConfig {
 	@ConfigValue("binds.forward")
 	public static EmiBind forward = new EmiBind("key.emi.forward", InputUtil.UNKNOWN_KEY.getCode());
 
+	@Comment("Quick move a ghost item.")
+	@ConfigValue("binds.quickghost")
+	public static EmiBind quickghost = new EmiBind("key.emi.quickghost",
+			new EmiBind.ModifiedKey(InputUtil.Type.MOUSE.createFromCode(0), EmiInput.SHIFT_MASK));
+
 	@ConfigGroup("binds.crafts")
 	@Comment("When on a stack with an associated recipe:\n"
 		+ "Move ingredients for a single result.")

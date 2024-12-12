@@ -1206,6 +1206,13 @@ public class EmiScreenManager {
 				BoM.setGoal(stack.getRecipeContext());
 				EmiApi.viewRecipeTree();
 				return true;
+			} else if (function.apply(EmiConfig.quickghost)) {
+				// TODO
+				if (client.currentScreen != null) {
+					if (EmiDragDropHandlers.dropStack(client.currentScreen, stack.getStack(), 9999, 9999)) {
+						return true;
+					}
+				}
 			}
 			Supplier<EmiRecipe> supplier = () -> {
 				return EmiUtil.getPreferredRecipe(ingredient, lastPlayerInventory, true);
